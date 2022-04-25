@@ -31,5 +31,5 @@ Start the program
 
 ## Authors
 
-- [@katherinepeterson](https://github.com/ike-gg)
+- [@ike](https://github.com/ike-gg)
 
