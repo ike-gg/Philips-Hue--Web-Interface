@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hue Configuration</title>
+    <link href="../fonts/stylesheet.css" rel="stylesheet">
+    <link href="../assets/components.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <div class="container">
+        <div class="configureBox show">
+            <h1>Hello there! 👋</h1>
+            <h3 style="margin-top: 10px;">You are running the app for the first time, this is the time to set it up with your Philips Hue<br><b>Make sure you have access to it for setup!</b></h3>
+            <button style="margin-top: 50px;">Continue</button>
+        </div>
+    </div>
+    <script src="../assets/animate.js"></script>
+    <script>
+        let configureBox = document.querySelector('.configureBox');
+        configureBox.animate(animateShowUpKeyFrames, animationOptions);
+        document.querySelector('button').addEventListener('click', e => {
+            configureBox.animate(animateHideKeyFrames, animationOptions)
+            setTimeout(() => {
+                console.log(location)
+                location.href = `${location.origin}/configure/selectYourHue`;
+            }, 500);
+        })
+    </script>
+</body>
+</html>

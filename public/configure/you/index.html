@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hue Configuration</title>
+    <link href="../../fonts/stylesheet.css" rel="stylesheet">
+    <link href="../../assets/components.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="../../assets/icon.png">
+</head>
+<body>
+    <div class="helloContainer">
+        <div style="text-align: center;">
+            Hello,<br><span id="yourName" style="font-size: 26px; font-weight: 600;">maciek</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="configureBox show">
+            <h1>That's almost it!</h1>
+            <h3 style="margin-top: 10px;">You are already connected to your Hue.<br>And finally. What shall I call you?</h3>
+            <input style="margin-top: 30px;" type="text" placeholder="Your name">
+            <button style="margin-top: 30px;" class="disabled">Finish</button>
+        </div>
+    </div>
+    <script src="../../assets/animate.js"></script>
+    <script>
+        let configureBox = document.querySelector('.configureBox');
+        configureBox.animate(animateShowUpKeyFrames, animationOptions);
+        document.querySelector('input').addEventListener('input', e => {
+            if (e.target.value.length > 2) {
+                document.querySelector('button').classList.remove("disabled");
+            }
+        })
+        document.querySelector('button').addEventListener('click', async e => {
+            let yourName = document.querySelector('input').value;
+            document.querySelector('.helloContainer').style.display = "flex";
+            document.querySelector('#yourName').textContent = yourName + "!";
+            if (!e.target.classList.contains("disabled")) {
+                configureBox.animate(animateHideKeyFrames, animationOptions);
+                let body = {
+                    user: yourName
+                }
+                const response = await fetch('/hueApi/user', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(body)
+                });
+                const data = await response.json();
+                if (data.status == "userAdded") {
+                    setTimeout(() => {
+                        location.href = location.origin;
+                    }, 1500);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

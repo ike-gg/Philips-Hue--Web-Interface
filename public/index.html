@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="fonts/stylesheet.css" rel="stylesheet">
+    <link href="assets/components.css" rel="stylesheet">
+    <link href="assets/index/style.css" rel="stylesheet">
+    <link rel="icon" href="assets/icon.png">
+    <title>Philips Hue</title>
+</head>
+<body>
+    <div class="miniAlert">
+        This is mini alert showing on but not important.
+    </div>
+    <div class="lightSettingsContainer">
+        <div class="lightSettingsBox">
+            <div class="lightSettingsName">Light name</div>
+            <div id="picker"></div>
+            <button id="closeColorBox" class="centeredButton tertiaryButton">Close</button>
+        </div>
+    </div>
+    <div class="container">
+        <nav>
+            <div class="navElement navElementActive" data-section="containerGroupLights">Lights</div>
+            <div class="navElement" data-section="settings">Settings</div>
+        </nav>
+        <section class="containerGroupLights">
+        </section>
+        <section class="settings" style="display: none;">
+            <div class="settingsSubTitle">Basic informations</div>
+            <div class="settingsInformationGrid">
+                <div class="settingsInformationName">Hue web interface version</div>
+                <div class="settingsInformationValue">1.0</div>
+                <div class="settingsInformationName">Author</div>
+                <div class="settingsInformationValue"><a href="https://github.com/ike-gg" target="_blank">ike-gg</a></div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+    <script src="assets/convertColors.js"></script>
+    <script src="assets/animate.js"></script>
+    <script src="assets/index/main.js"></script>
+</body>
+</html>

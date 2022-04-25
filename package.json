@@ -1,0 +1,32 @@
+{
+  "name": "philipshue-webinterface",
+  "version": "1.0.0",
+  "description": "Philips Hue web panel to control your lights",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "philips",
+    "hue",
+    "interface",
+    "control",
+    "panel",
+    "led",
+    "lights",
+    "colors",
+    "rgb",
+    "color"
+  ],
+  "author": "ernescik",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "body-parser": "^1.19.0",
+    "chalk": "^4.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "local-devices": "^3.0.0"
+  },
+  "type": "module"
+}
