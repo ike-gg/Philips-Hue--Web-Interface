@@ -28,6 +28,12 @@ Start the program
   node index.js
 ```
 
+Web interface should work on 
+
+```bash
+  http://localhost:1337
+```
+
 
 ## Authors
 
