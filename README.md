@@ -1,6 +1,8 @@
 # Philips-Hue--Web-Interface
 Control your philips hue lights using just web browser!
 
+## I WOULD LIKE TO REWRITE THIS IN REACT SOON 
+
 
 ## Run Locally
 
